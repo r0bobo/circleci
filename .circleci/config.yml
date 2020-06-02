@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - checkout
-     - run: buildctl build --frontend dockerfile.v0 --local context=~~/repo --local dockerfile=~/repo
+      - run: buildctl build --frontend dockerfile.v0 --local context=~~/repo --local dockerfile=~/repo
