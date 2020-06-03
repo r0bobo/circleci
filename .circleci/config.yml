@@ -5,8 +5,12 @@ jobs:
       # specify the version you desire here
       - image: robobo/circleci-buildkit
 
+      - image: robobo/circleci-buildkit
+        command:
+          - --addr=tcp://0.0.0.0:9000
+
     working_directory: ~/repo
 
     steps:
       - checkout
-      - run: buildctl build --frontend dockerfile.v0 --local context=~~/repo --local dockerfile=~/repo
+      - run: buildctl --addr=tcp://127.0.0.1:9000 build --frontend dockerfile.v0 --local context=~~/repo --local dockerfile=~/repo
